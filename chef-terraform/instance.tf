@@ -6,6 +6,7 @@ resource "aws_instance" "chef-node" {
 
   vpc_security_group_ids = ["${aws_security_group.chef-security.id}"]
 
+  # Run chef client to this particular instance 
   provisioner "chef" {
     environment = "_default"
     run_list = ["firstcookbook::default"]
@@ -17,6 +18,7 @@ resource "aws_instance" "chef-node" {
 
   }
 
+  # Use the following key to ssh to the instance
   connection {
     type = "ssh"
     user = "ec2-user"
