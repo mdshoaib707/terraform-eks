@@ -1,2 +1,2 @@
 # Terraform
-Create an EKS cluster using terraform
+Create different resources using terraform
